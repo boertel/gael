@@ -9,20 +9,83 @@
 /* Begin PBXBuildFile section */
 		B514AEB72ADE2F4F00C6FAB0 /* gaelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B514AEB62ADE2F4F00C6FAB0 /* gaelApp.swift */; };
 		B514AEB92ADE2F4F00C6FAB0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B514AEB82ADE2F4F00C6FAB0 /* ContentView.swift */; };
-		B514AEBB2ADE2F4F00C6FAB0 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = B514AEBA2ADE2F4F00C6FAB0 /* Item.swift */; };
+		B514AEBB2ADE2F4F00C6FAB0 /* Feeding.swift in Sources */ = {isa = PBXBuildFile; fileRef = B514AEBA2ADE2F4F00C6FAB0 /* Feeding.swift */; };
 		B514AEBD2ADE2F5000C6FAB0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B514AEBC2ADE2F5000C6FAB0 /* Assets.xcassets */; };
 		B514AEC02ADE2F5000C6FAB0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B514AEBF2ADE2F5000C6FAB0 /* Preview Assets.xcassets */; };
+		B532CBE02AE1ED4000C49CE7 /* FeedingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B532CBDF2AE1ED4000C49CE7 /* FeedingItem.swift */; };
+		B56BEDA52AE9893A00AC0007 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B56BED862AE2C48500AC0007 /* WidgetKit.framework */; };
+		B56BEDA62AE9893A00AC0007 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B56BED882AE2C48600AC0007 /* SwiftUI.framework */; };
+		B56BEDA92AE9893A00AC0007 /* GaelWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56BEDA82AE9893A00AC0007 /* GaelWidgetBundle.swift */; };
+		B56BEDAB2AE9893A00AC0007 /* GaelWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56BEDAA2AE9893A00AC0007 /* GaelWidget.swift */; };
+		B56BEDAD2AE9893C00AC0007 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B56BEDAC2AE9893C00AC0007 /* Assets.xcassets */; };
+		B56BEDB12AE9893C00AC0007 /* GaelWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B56BEDA42AE9893A00AC0007 /* GaelWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B56BEDB52AE9898F00AC0007 /* Feeding.swift in Sources */ = {isa = PBXBuildFile; fileRef = B514AEBA2ADE2F4F00C6FAB0 /* Feeding.swift */; };
+		B56BEDB82AEB199300AC0007 /* FutureFeedingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56BEDB72AEB199300AC0007 /* FutureFeedingItem.swift */; };
+		B56BEDBA2AEB1A9A00AC0007 /* BoobImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56BEDB92AEB1A9A00AC0007 /* BoobImage.swift */; };
+		B56BEDBB2AEB1C1E00AC0007 /* BoobImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56BEDB92AEB1A9A00AC0007 /* BoobImage.swift */; };
+		B56BEDBC2AEB1C1E00AC0007 /* FutureFeedingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56BEDB72AEB199300AC0007 /* FutureFeedingItem.swift */; };
+		B56BEDC02AEB1D0900AC0007 /* BetterDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56BEDBF2AEB1D0900AC0007 /* BetterDate.swift */; };
+		B56BEDC12AEB1D2200AC0007 /* BetterDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56BEDBF2AEB1D0900AC0007 /* BetterDate.swift */; };
+		B56BEDEA2AEC019B00AC0007 /* GaelAppIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56BEDE92AEC019B00AC0007 /* GaelAppIntents.swift */; };
+		B56BEDEB2AEC019B00AC0007 /* GaelAppIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56BEDE92AEC019B00AC0007 /* GaelAppIntents.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B56BEDAF2AE9893C00AC0007 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B514AEAB2ADE2F4E00C6FAB0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B56BEDA32AE9893A00AC0007;
+			remoteInfo = GaelWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B56BED992AE2C48800AC0007 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B56BEDB12AE9893C00AC0007 /* GaelWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B56BEDD52AEBF9AF00AC0007 /* Embed ExtensionKit Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(EXTENSIONS_FOLDER_PATH)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			name = "Embed ExtensionKit Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B514AEB32ADE2F4F00C6FAB0 /* gael.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gael.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B514AEB62ADE2F4F00C6FAB0 /* gaelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gaelApp.swift; sourceTree = "<group>"; };
 		B514AEB82ADE2F4F00C6FAB0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		B514AEBA2ADE2F4F00C6FAB0 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		B514AEBA2ADE2F4F00C6FAB0 /* Feeding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feeding.swift; sourceTree = "<group>"; };
 		B514AEBC2ADE2F5000C6FAB0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B514AEBF2ADE2F5000C6FAB0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B514AEC12ADE2F5000C6FAB0 /* gael.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = gael.entitlements; sourceTree = "<group>"; };
 		B514AEC22ADE2F5000C6FAB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B532CBDF2AE1ED4000C49CE7 /* FeedingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedingItem.swift; sourceTree = "<group>"; };
+		B56BED862AE2C48500AC0007 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		B56BED882AE2C48600AC0007 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		B56BEDA42AE9893A00AC0007 /* GaelWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = GaelWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B56BEDA82AE9893A00AC0007 /* GaelWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaelWidgetBundle.swift; sourceTree = "<group>"; };
+		B56BEDAA2AE9893A00AC0007 /* GaelWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaelWidget.swift; sourceTree = "<group>"; };
+		B56BEDAC2AE9893C00AC0007 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B56BEDAE2AE9893C00AC0007 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B56BEDB62AEAF7D400AC0007 /* GaelWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GaelWidgetExtension.entitlements; sourceTree = "<group>"; };
+		B56BEDB72AEB199300AC0007 /* FutureFeedingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutureFeedingItem.swift; sourceTree = "<group>"; };
+		B56BEDB92AEB1A9A00AC0007 /* BoobImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoobImage.swift; sourceTree = "<group>"; };
+		B56BEDBF2AEB1D0900AC0007 /* BetterDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterDate.swift; sourceTree = "<group>"; };
+		B56BEDE92AEC019B00AC0007 /* GaelAppIntents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaelAppIntents.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,13 +96,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B56BEDA12AE9893A00AC0007 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B56BEDA62AE9893A00AC0007 /* SwiftUI.framework in Frameworks */,
+				B56BEDA52AE9893A00AC0007 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		B514AEAA2ADE2F4E00C6FAB0 = {
 			isa = PBXGroup;
 			children = (
+				B56BEDB62AEAF7D400AC0007 /* GaelWidgetExtension.entitlements */,
 				B514AEB52ADE2F4F00C6FAB0 /* gael */,
+				B56BEDA72AE9893A00AC0007 /* GaelWidget */,
+				B56BED852AE2C48500AC0007 /* Frameworks */,
 				B514AEB42ADE2F4F00C6FAB0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				B514AEB32ADE2F4F00C6FAB0 /* gael.app */,
+				B56BEDA42AE9893A00AC0007 /* GaelWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -55,9 +131,14 @@
 		B514AEB52ADE2F4F00C6FAB0 /* gael */ = {
 			isa = PBXGroup;
 			children = (
+				B56BEDE92AEC019B00AC0007 /* GaelAppIntents.swift */,
+				B532CBDF2AE1ED4000C49CE7 /* FeedingItem.swift */,
 				B514AEB62ADE2F4F00C6FAB0 /* gaelApp.swift */,
 				B514AEB82ADE2F4F00C6FAB0 /* ContentView.swift */,
-				B514AEBA2ADE2F4F00C6FAB0 /* Item.swift */,
+				B56BEDB92AEB1A9A00AC0007 /* BoobImage.swift */,
+				B56BEDB72AEB199300AC0007 /* FutureFeedingItem.swift */,
+				B56BEDBF2AEB1D0900AC0007 /* BetterDate.swift */,
+				B56BED9F2AE2EBDD00AC0007 /* Model */,
 				B514AEBC2ADE2F5000C6FAB0 /* Assets.xcassets */,
 				B514AEC12ADE2F5000C6FAB0 /* gael.entitlements */,
 				B514AEC22ADE2F5000C6FAB0 /* Info.plist */,
@@ -74,6 +155,34 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		B56BED852AE2C48500AC0007 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B56BED862AE2C48500AC0007 /* WidgetKit.framework */,
+				B56BED882AE2C48600AC0007 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B56BED9F2AE2EBDD00AC0007 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B514AEBA2ADE2F4F00C6FAB0 /* Feeding.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B56BEDA72AE9893A00AC0007 /* GaelWidget */ = {
+			isa = PBXGroup;
+			children = (
+				B56BEDA82AE9893A00AC0007 /* GaelWidgetBundle.swift */,
+				B56BEDAA2AE9893A00AC0007 /* GaelWidget.swift */,
+				B56BEDAC2AE9893C00AC0007 /* Assets.xcassets */,
+				B56BEDAE2AE9893C00AC0007 /* Info.plist */,
+			);
+			path = GaelWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -84,15 +193,35 @@
 				B514AEAF2ADE2F4F00C6FAB0 /* Sources */,
 				B514AEB02ADE2F4F00C6FAB0 /* Frameworks */,
 				B514AEB12ADE2F4F00C6FAB0 /* Resources */,
+				B56BED992AE2C48800AC0007 /* Embed Foundation Extensions */,
+				B56BEDD52AEBF9AF00AC0007 /* Embed ExtensionKit Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B56BEDB02AE9893C00AC0007 /* PBXTargetDependency */,
 			);
 			name = gael;
 			productName = gael;
 			productReference = B514AEB32ADE2F4F00C6FAB0 /* gael.app */;
 			productType = "com.apple.product-type.application";
+		};
+		B56BEDA32AE9893A00AC0007 /* GaelWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B56BEDB22AE9893C00AC0007 /* Build configuration list for PBXNativeTarget "GaelWidgetExtension" */;
+			buildPhases = (
+				B56BEDA02AE9893A00AC0007 /* Sources */,
+				B56BEDA12AE9893A00AC0007 /* Frameworks */,
+				B56BEDA22AE9893A00AC0007 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GaelWidgetExtension;
+			productName = GaelWidgetExtension;
+			productReference = B56BEDA42AE9893A00AC0007 /* GaelWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -105,6 +234,9 @@
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					B514AEB22ADE2F4F00C6FAB0 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					B56BEDA32AE9893A00AC0007 = {
 						CreatedOnToolsVersion = 15.0;
 					};
 				};
@@ -123,6 +255,7 @@
 			projectRoot = "";
 			targets = (
 				B514AEB22ADE2F4F00C6FAB0 /* gael */,
+				B56BEDA32AE9893A00AC0007 /* GaelWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -137,6 +270,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B56BEDA22AE9893A00AC0007 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B56BEDAD2AE9893C00AC0007 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -145,12 +286,39 @@
 			buildActionMask = 2147483647;
 			files = (
 				B514AEB92ADE2F4F00C6FAB0 /* ContentView.swift in Sources */,
-				B514AEBB2ADE2F4F00C6FAB0 /* Item.swift in Sources */,
+				B532CBE02AE1ED4000C49CE7 /* FeedingItem.swift in Sources */,
+				B514AEBB2ADE2F4F00C6FAB0 /* Feeding.swift in Sources */,
+				B56BEDBA2AEB1A9A00AC0007 /* BoobImage.swift in Sources */,
+				B56BEDC02AEB1D0900AC0007 /* BetterDate.swift in Sources */,
 				B514AEB72ADE2F4F00C6FAB0 /* gaelApp.swift in Sources */,
+				B56BEDEA2AEC019B00AC0007 /* GaelAppIntents.swift in Sources */,
+				B56BEDB82AEB199300AC0007 /* FutureFeedingItem.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B56BEDA02AE9893A00AC0007 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B56BEDBB2AEB1C1E00AC0007 /* BoobImage.swift in Sources */,
+				B56BEDC12AEB1D2200AC0007 /* BetterDate.swift in Sources */,
+				B56BEDEB2AEC019B00AC0007 /* GaelAppIntents.swift in Sources */,
+				B56BEDBC2AEB1C1E00AC0007 /* FutureFeedingItem.swift in Sources */,
+				B56BEDB52AE9898F00AC0007 /* Feeding.swift in Sources */,
+				B56BEDAB2AE9893A00AC0007 /* GaelWidget.swift in Sources */,
+				B56BEDA92AE9893A00AC0007 /* GaelWidgetBundle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B56BEDB02AE9893C00AC0007 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B56BEDA32AE9893A00AC0007 /* GaelWidgetExtension */;
+			targetProxy = B56BEDAF2AE9893C00AC0007 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		B514AEC32ADE2F5000C6FAB0 /* Debug */ = {
@@ -275,59 +443,135 @@
 		B514AEC62ADE2F5000C6FAB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = gael/gael.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"gael/Preview Content\"";
-				DEVELOPMENT_TEAM = Z3NKEZ4YM5;
+				DEVELOPMENT_TEAM = 8W386G7SY7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = gael/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Gael;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
+				INFOPLIST_KEY_NSSiriUsageDescription = "Start/end feeding with voice";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = fr.oertel.gael;
+				PRODUCT_BUNDLE_IDENTIFIER = com.comediadesign.gael;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		B514AEC72ADE2F5000C6FAB0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = gael/gael.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"gael/Preview Content\"";
-				DEVELOPMENT_TEAM = Z3NKEZ4YM5;
+				DEVELOPMENT_TEAM = 8W386G7SY7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = gael/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Gael;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.medical";
+				INFOPLIST_KEY_NSSiriUsageDescription = "Start/end feeding with voice";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = fr.oertel.gael;
+				PRODUCT_BUNDLE_IDENTIFIER = com.comediadesign.gael;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		B56BEDB32AE9893C00AC0007 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = GaelWidgetExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8W386G7SY7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GaelWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = GaelWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.comediadesign.gael.GaelWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B56BEDB42AE9893C00AC0007 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = GaelWidgetExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8W386G7SY7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GaelWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = GaelWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.comediadesign.gael.GaelWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -351,6 +595,15 @@
 			buildConfigurations = (
 				B514AEC62ADE2F5000C6FAB0 /* Debug */,
 				B514AEC72ADE2F5000C6FAB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B56BEDB22AE9893C00AC0007 /* Build configuration list for PBXNativeTarget "GaelWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B56BEDB32AE9893C00AC0007 /* Debug */,
+				B56BEDB42AE9893C00AC0007 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

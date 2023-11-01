@@ -14,6 +14,8 @@ struct ContentView: View {
   @Environment(\.colorScheme) var colorScheme
   @Query(sort: \Feeding.timestamp, order: .reverse) private var items: [Feeding]
   
+  @State var editingItem: Feeding?
+  
   var groupedItems: [(key: String, value: [Feeding])] {
     return Dictionary(grouping: items) { item in
       dateToString(item.timestamp)
@@ -32,13 +34,18 @@ struct ContentView: View {
                 let group = groupedItems[groupIndex].value
                 Section(header: DateDisplayView(dateString: key, count: group.count)) {
                   ForEach(Array(group.enumerated()), id: \.element) { index, item in
-                    FeedingItem(item: item).swipeActions {
-                      // Add swipe actions here
+                    FeedingItem(item: item).swipeActions(edge: .trailing) {
                       Button(role: .destructive) {
                         deleteItem(item: item)
                       } label: {
                         Label("Delete", systemImage: "trash").symbolVariant(.fill)
                       }
+                    }.swipeActions(edge: .leading) {
+                      Button {
+                        editItem(item: item)
+                      } label: {
+                        Label("Edit", systemImage: "pencil").symbolVariant(.fill)
+                      }.tint(.blue)
                     }.listRowInsets(EdgeInsets(top: index == 0 ? 10 : 0, leading: 22, bottom: index == group.count - 1 ? -14 : 14, trailing: 22)).listRowSeparator(.hidden)
                   }
                 }
@@ -58,8 +65,12 @@ struct ContentView: View {
           }
         }
       }
-      ActionsBar(side: items.first?.side, addLeftItem: addLeftItem, addRightItem: addRightItem)
+      ActionsBar(side: items.first?.side, editingItem: $editingItem)
     }
+  }
+  
+  private func editItem(item: Feeding) {
+    editingItem = item
   }
   
   private func deleteItem(item: Feeding) {
@@ -77,30 +88,13 @@ struct ContentView: View {
       WidgetCenter.shared.reloadAllTimelines()
     }
   }
-  
-  private func addItem(side: Side) {
-    withAnimation {
-      let newItem = Feeding(side: side, previous: items.first)
-      withAnimation {
-        modelContext.insert(newItem)
-      }
-      WidgetCenter.shared.reloadAllTimelines()
-    }
-  }
-
-  private func addLeftItem() {
-    addItem(side: Side.left)
-  }
-  private func addRightItem() {
-    addItem(side: Side.right)
-  }
 }
 
 
 struct ActionsBar: View {
   let side: Side?
-  var addLeftItem: () -> Void
-  var addRightItem: () -> Void
+  @Binding var editingItem: Feeding?
+  @State private var timestamp: Date = Date()
   
   var body: some View {
     ZStack {
@@ -108,15 +102,30 @@ struct ActionsBar: View {
       Color.black
         .opacity(0.8)
         .blur(radius: 10)
-      HStack {
-        BoobButton(side: Side.left, activeSide: side, reverse: true, intent: StartLeftFeeding())
-        Spacer()
-        BoobButton(side: Side.right, activeSide: side, reverse: true, intent: StartRightFeeding())
-      }.accentColor(.white)
-        .padding(.horizontal, 20)
-        .padding(.vertical, 16)
-        .background(.thinMaterial)
-        .cornerRadius(10)
+      VStack {
+        VStack {
+          if let item = editingItem {
+            HStack {
+              DatePicker("", selection: $timestamp, displayedComponents: .hourAndMinute).labelsHidden()
+              Button("Save") {
+                item.timestamp = timestamp
+                editingItem = nil
+              }
+            }.onAppear {
+              timestamp = item.timestamp
+            }
+          }
+          HStack {
+            BoobButton(side: Side.left, activeSide: side, reverse: true, intent: StartLeftFeeding())
+            Spacer()
+            BoobButton(side: Side.right, activeSide: side, reverse: true, intent: StartRightFeeding())
+          }
+        }.accentColor(.white)
+          .padding(.horizontal, 20)
+          .padding(.vertical, 16)
+          .background(.thinMaterial)
+          .cornerRadius(10)
+      }
     }.frame(height: 80).padding()
   }
 }

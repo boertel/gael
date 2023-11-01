@@ -14,7 +14,8 @@ struct BoobImage: View {
   var reverse: Bool = false
   
   var body: some View {
-    Image(systemName: getSystemName()).foregroundColor(isActive ? .accentColor : .gray).symbolRenderingMode(.hierarchical)
+    Image(systemName: getSystemName()).foregroundColor(isActive ? .accentColor : .gray)
+      .symbolRenderingMode(isActive ? .monochrome : .hierarchical)
   }
   
   var isActive: Bool {
@@ -28,10 +29,7 @@ struct BoobImage: View {
   }
   
   func getSystemName() -> String {
-    var systemName = side == Side.left ? "l.circle" : "r.circle"
-    if isActive {
-      systemName += ".fill"
-    }
+    let systemName = side == Side.left ? "l.circle.fill" : "r.circle.fill"
     return systemName
   }
 }

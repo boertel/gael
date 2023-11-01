@@ -21,6 +21,23 @@ struct GaelShortcuts: AppShortcutsProvider {
   }
 }
 
+@MainActor
+func getLastFeeding(_ modelContainer: ModelContainer) -> Feeding? {
+  var descriptor = FetchDescriptor<Feeding>(sortBy: [SortDescriptor(\.timestamp, order: .reverse)])
+  descriptor.fetchLimit = 1
+  let feedings = try? modelContainer.mainContext.fetch(descriptor)
+  let lastFeeding = feedings?.first
+  return lastFeeding
+}
+
+@MainActor
+func insertFeeding(modelContainer: ModelContainer, side: Side) {
+  let previous = getLastFeeding(modelContainer)
+  let feeding = Feeding(side: side, previous: previous)
+  modelContainer.mainContext.insert(feeding)
+  WidgetCenter.shared.reloadAllTimelines()
+}
+
 struct StartFeedingIntent: AppIntent {
   static var title: LocalizedStringResource = "Start feeding (intent)"
   
@@ -30,10 +47,7 @@ struct StartFeedingIntent: AppIntent {
       return .result()
     }
     
-    var descriptor = FetchDescriptor<Feeding>(sortBy: [SortDescriptor(\.timestamp, order: .reverse)])
-    descriptor.fetchLimit = 1
-    let feedings = try? modelContainer.mainContext.fetch(descriptor)
-    let lastFeeding = feedings?.first
+    let lastFeeding = getLastFeeding(modelContainer)
     
     if let f = lastFeeding {
       let nextSide = f.side == Side.left ? Side.right : Side.left
@@ -41,6 +55,7 @@ struct StartFeedingIntent: AppIntent {
       modelContainer.mainContext.insert(feeding)
       WidgetCenter.shared.reloadAllTimelines()
     }
+    
     return .result()
   }
 }
@@ -54,9 +69,7 @@ struct StartRightFeeding: AppIntent {
       return .result()
     }
     
-    let feeding = Feeding(side: Side.right)
-    modelContainer.mainContext.insert(feeding)
-    WidgetCenter.shared.reloadAllTimelines()
+    insertFeeding(modelContainer: modelContainer, side: Side.right)
     
     return .result()
   }
@@ -71,9 +84,7 @@ struct StartLeftFeeding: AppIntent {
       return .result()
     }
     
-    let feeding = Feeding(side: Side.left)
-    modelContainer.mainContext.insert(feeding)
-    WidgetCenter.shared.reloadAllTimelines()
+    insertFeeding(modelContainer: modelContainer, side: Side.left)
     
     return .result()
   }

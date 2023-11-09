@@ -65,7 +65,7 @@ struct RectangularWidgetView: View {
   var body: some View {
     if let feeding = entry.lastFeeding {
       VStack {
-        Text("Next feeding").font(.caption2)
+        FeedingLabel(start: feeding.getStart(), isNow: FeedingTimeLabel(), isAfter: Text("Next feeding")).font(.caption2)
         Spacer()
         FutureInterval(start: feeding.getStart(), end: feeding.getEnd(), now: Date())
           .font(.system(.body, design: .monospaced))
@@ -92,7 +92,7 @@ struct HomeScreenWidgetView: View {
           let activeColor = feeding.getColor(now: now)
           
           VStack {
-            Text("Next feeding between").font(.system(size: family == .systemSmall ? 12 : 16))
+            FeedingLabel(start: feeding.getStart(), isNow: FeedingTimeLabel(), isAfter: Text("Next feeding between")).font(.system(size: family == .systemSmall ? 12 : 16))
             Spacer()
             FutureInterval(start: feeding.getStart(), end: feeding.getEnd(), now: Date())
               .font(.system(size: family == .systemSmall ? 15 : 16, design: .monospaced))

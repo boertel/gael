@@ -11,12 +11,25 @@ import WidgetKit
 import SwiftData
 
 struct GaelShortcuts: AppShortcutsProvider {
+  @AppShortcutsBuilder
   static var appShortcuts: [AppShortcut] {
     AppShortcut(
       intent: StartFeedingIntent(),
       phrases: ["Tell \(.applicationName) to start the feeding"],
       shortTitle: "Start Feeding (shortcut)",
       systemImageName: "play.circle.fill"
+    )
+    AppShortcut(
+      intent: StartRightFeeding(),
+      phrases: ["Tell \(.applicationName) to start the feeding on the right side"],
+      shortTitle: "Start feeding on the right side",
+      systemImageName: "r.circle.fill"
+    )
+    AppShortcut(
+      intent: StartLeftFeeding(),
+      phrases: ["Tell \(.applicationName) to start the feeding on the left side"],
+      shortTitle: "Start feeding on the left side",
+      systemImageName: "l.circle.fill"
     )
   }
 }

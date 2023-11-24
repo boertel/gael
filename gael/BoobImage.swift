@@ -9,13 +9,35 @@ import SwiftUI
 import AppIntents
 
 struct BoobImage: View {
+  @Environment(\.colorScheme) var colorScheme
   let side: Side
   var activeSide: Side?
   var reverse: Bool = false
   
   var body: some View {
-    Image(systemName: getSystemName()).foregroundColor(isActive ? .accentColor : .gray)
-      .symbolRenderingMode(isActive ? .monochrome : .hierarchical)
+    Image(systemName: getSystemName())
+      .foregroundColor(getForegroundColor())
+      .symbolRenderingMode(getSymbolRenderingMode())
+  }
+  
+  private func getForegroundColor() -> Color {
+    if isActive {
+      return .accentColor
+    } else {
+      return .gray
+    }
+  }
+  
+  private func getSymbolRenderingMode() -> SymbolRenderingMode {
+    if isActive {
+      return .monochrome
+    } else {
+      if colorScheme == .dark {
+        return .hierarchical
+      } else {
+        return .monochrome
+      }
+    }
   }
   
   var isActive: Bool {
@@ -39,13 +61,14 @@ struct BoobButton: View {
   let side: Side
   let activeSide: Side?
   let reverse: Bool
+  var size: CGFloat? = 30
   
   let intent: any AppIntent
 
   var body: some View {
     Button(intent: intent) {
       BoobImage(side: side, activeSide: activeSide, reverse: reverse)
-        .font(.system(size: 30))
+        .font(.system(size: size ?? 30))
     }.buttonStyle(.plain)
   }
 }
@@ -69,6 +92,6 @@ struct BoobButton: View {
       BoobImage(side: Side.right)
       BoobImage(side: Side.left, activeSide: Side.left)
       BoobImage(side: Side.left, activeSide: Side.left)
-    }.accentColor(.red)
+    }.accentColor(.green)
   }
 }

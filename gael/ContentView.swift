@@ -47,11 +47,24 @@ struct ContentView: View {
 
 
 struct ActionsBar: View {
+  @Environment(\.modelContext) private var modelContext
   @Environment(\.colorScheme) var colorScheme
   let side: Side?
   
   private func getBackgroundColor() -> Color {
     colorScheme == .dark ? .black : .white
+  }
+  
+  private func addFeeding(_ side: Side) {
+    modelContext.insert(Feeding(side: side))
+  }
+  
+  func addLeftFeeding() {
+    addFeeding(Side.left)
+  }
+  
+  func addRightFeeding() {
+    addFeeding(Side.right)
   }
   
   var body: some View {
@@ -68,7 +81,7 @@ struct ActionsBar: View {
             activeSide: side,
             reverse: true,
             size: 40,
-            intent: StartLeftFeeding()
+            action: addLeftFeeding
           )
           Spacer()
           BoobButton(
@@ -76,7 +89,7 @@ struct ActionsBar: View {
             activeSide: side,
             reverse: true,
             size: 40,
-            intent: StartRightFeeding()
+            action: addRightFeeding
           )
         }
         Spacer()

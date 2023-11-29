@@ -63,6 +63,22 @@ struct BoobButton: View {
   let reverse: Bool
   var size: CGFloat? = 30
   
+  let action: () -> Void
+
+  var body: some View {
+    Button(action: action) {
+      BoobImage(side: side, activeSide: activeSide, reverse: reverse)
+        .font(.system(size: size ?? 30))
+    }.buttonStyle(.plain)
+  }
+}
+
+struct BoobIntentButton: View {
+  let side: Side
+  let activeSide: Side?
+  let reverse: Bool
+  var size: CGFloat? = 30
+  
   let intent: any AppIntent
 
   var body: some View {

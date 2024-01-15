@@ -12,6 +12,19 @@ import SwiftUI
 enum Side: String, Codable {
   case right = "right"
   case left =  "left"
+  
+  var id: Self {
+    return self
+  }
+  
+  var descr: String {
+    switch self {
+    case .right:
+      "right"
+    case .left:
+      "left"
+    }
+  }
 }
 
 @Model

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B506C6D92AFDBA9D006F65E2 /* Feedings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B506C6D82AFDBA9D006F65E2 /* Feedings.swift */; };
 		B514AEB72ADE2F4F00C6FAB0 /* gaelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B514AEB62ADE2F4F00C6FAB0 /* gaelApp.swift */; };
 		B514AEB92ADE2F4F00C6FAB0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B514AEB82ADE2F4F00C6FAB0 /* ContentView.swift */; };
 		B514AEBB2ADE2F4F00C6FAB0 /* Feeding.swift in Sources */ = {isa = PBXBuildFile; fileRef = B514AEBA2ADE2F4F00C6FAB0 /* Feeding.swift */; };
@@ -28,6 +29,10 @@
 		B56BEDC12AEB1D2200AC0007 /* BetterDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56BEDBF2AEB1D0900AC0007 /* BetterDate.swift */; };
 		B56BEDEA2AEC019B00AC0007 /* GaelAppIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56BEDE92AEC019B00AC0007 /* GaelAppIntents.swift */; };
 		B56BEDEB2AEC019B00AC0007 /* GaelAppIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56BEDE92AEC019B00AC0007 /* GaelAppIntents.swift */; };
+		B5B159E82B082F1C000F5F51 /* FeedingSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B159E72B082F1C000F5F51 /* FeedingSamples.swift */; };
+		B5B159EA2B083000000F5F51 /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B159E92B083000000F5F51 /* PreviewContainer.swift */; };
+		B5B159EB2B08381A000F5F51 /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B159E92B083000000F5F51 /* PreviewContainer.swift */; };
+		B5B159EC2B083828000F5F51 /* FeedingSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B159E72B082F1C000F5F51 /* FeedingSamples.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +70,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B506C6D82AFDBA9D006F65E2 /* Feedings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feedings.swift; sourceTree = "<group>"; };
 		B514AEB32ADE2F4F00C6FAB0 /* gael.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gael.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B514AEB62ADE2F4F00C6FAB0 /* gaelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gaelApp.swift; sourceTree = "<group>"; };
 		B514AEB82ADE2F4F00C6FAB0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -86,6 +92,8 @@
 		B56BEDB92AEB1A9A00AC0007 /* BoobImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoobImage.swift; sourceTree = "<group>"; };
 		B56BEDBF2AEB1D0900AC0007 /* BetterDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterDate.swift; sourceTree = "<group>"; };
 		B56BEDE92AEC019B00AC0007 /* GaelAppIntents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaelAppIntents.swift; sourceTree = "<group>"; };
+		B5B159E72B082F1C000F5F51 /* FeedingSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedingSamples.swift; sourceTree = "<group>"; };
+		B5B159E92B083000000F5F51 /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +143,7 @@
 				B532CBDF2AE1ED4000C49CE7 /* FeedingItem.swift */,
 				B514AEB62ADE2F4F00C6FAB0 /* gaelApp.swift */,
 				B514AEB82ADE2F4F00C6FAB0 /* ContentView.swift */,
+				B506C6D82AFDBA9D006F65E2 /* Feedings.swift */,
 				B56BEDB92AEB1A9A00AC0007 /* BoobImage.swift */,
 				B56BEDB72AEB199300AC0007 /* FutureFeedingItem.swift */,
 				B56BEDBF2AEB1D0900AC0007 /* BetterDate.swift */,
@@ -151,6 +160,8 @@
 			isa = PBXGroup;
 			children = (
 				B514AEBF2ADE2F5000C6FAB0 /* Preview Assets.xcassets */,
+				B5B159E72B082F1C000F5F51 /* FeedingSamples.swift */,
+				B5B159E92B083000000F5F51 /* PreviewContainer.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -285,9 +296,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5B159EA2B083000000F5F51 /* PreviewContainer.swift in Sources */,
 				B514AEB92ADE2F4F00C6FAB0 /* ContentView.swift in Sources */,
 				B532CBE02AE1ED4000C49CE7 /* FeedingItem.swift in Sources */,
 				B514AEBB2ADE2F4F00C6FAB0 /* Feeding.swift in Sources */,
+				B506C6D92AFDBA9D006F65E2 /* Feedings.swift in Sources */,
+				B5B159E82B082F1C000F5F51 /* FeedingSamples.swift in Sources */,
 				B56BEDBA2AEB1A9A00AC0007 /* BoobImage.swift in Sources */,
 				B56BEDC02AEB1D0900AC0007 /* BetterDate.swift in Sources */,
 				B514AEB72ADE2F4F00C6FAB0 /* gaelApp.swift in Sources */,
@@ -302,10 +316,12 @@
 			files = (
 				B56BEDBB2AEB1C1E00AC0007 /* BoobImage.swift in Sources */,
 				B56BEDC12AEB1D2200AC0007 /* BetterDate.swift in Sources */,
+				B5B159EC2B083828000F5F51 /* FeedingSamples.swift in Sources */,
 				B56BEDEB2AEC019B00AC0007 /* GaelAppIntents.swift in Sources */,
 				B56BEDBC2AEB1C1E00AC0007 /* FutureFeedingItem.swift in Sources */,
 				B56BEDB52AE9898F00AC0007 /* Feeding.swift in Sources */,
 				B56BEDAB2AE9893A00AC0007 /* GaelWidget.swift in Sources */,
+				B5B159EB2B08381A000F5F51 /* PreviewContainer.swift in Sources */,
 				B56BEDA92AE9893A00AC0007 /* GaelWidgetBundle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -449,7 +465,7 @@
 				CODE_SIGN_ENTITLEMENTS = gael/gael.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_ASSET_PATHS = "\"gael/Preview Content\"";
 				DEVELOPMENT_TEAM = 8W386G7SY7;
 				ENABLE_PREVIEWS = YES;
@@ -489,7 +505,7 @@
 				CODE_SIGN_ENTITLEMENTS = gael/gael.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_ASSET_PATHS = "\"gael/Preview Content\"";
 				DEVELOPMENT_TEAM = 8W386G7SY7;
 				ENABLE_PREVIEWS = YES;
@@ -528,7 +544,7 @@
 				CODE_SIGN_ENTITLEMENTS = GaelWidgetExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 8W386G7SY7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GaelWidget/Info.plist;
@@ -557,7 +573,7 @@
 				CODE_SIGN_ENTITLEMENTS = GaelWidgetExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = 8W386G7SY7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GaelWidget/Info.plist;

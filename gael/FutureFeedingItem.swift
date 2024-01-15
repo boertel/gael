@@ -16,7 +16,7 @@ struct FutureFeedingItem: View {
   var body: some View {
     let activeColor = item.getColor(now: now)
     Group {
-      Text("Next:")
+      FeedingLabel(start: item.getStart(), isNow: FeedingTimeLabel().font(.caption), isAfter: Text("Next:"), now: now)
       Spacer()
       FutureInterval(start: item.getStart(), end: item.getEnd(), now: now).font(.system(.body, design: .monospaced))
       Spacer()
@@ -28,6 +28,48 @@ struct FutureFeedingItem: View {
   }
 }
 
+
+struct FeedingLabel<IsNowContent: View, IsAfterContent: View>: View {
+  let start: Date?
+  @ViewBuilder let isNow: IsNowContent
+  @ViewBuilder let isAfter: IsAfterContent
+  let now: Date?
+  
+  init(start: Date?, isNow: IsNowContent, isAfter: IsAfterContent, now: Date? = nil) {
+    self.start = start
+    self.isNow = isNow
+    self.isAfter = isAfter
+    self.now = now ?? Date()
+  }
+  
+  var body: some View {
+    if let n = now {
+      if let s = start {
+        if s < n {
+          isNow
+        } else {
+          isAfter
+        }
+      } else {
+        Text("No feeding")
+      }
+    } else {
+      Text("")
+    }
+  }
+}
+
+struct FeedingTimeLabel: View {
+  var body: some View {
+    HStack {
+      Image(systemName: "fork.knife")
+      Text("Feeding time")
+    }
+  }
+}
+
+
+
 struct FutureInterval: View {
   let start: Date?
   let end: Date?
@@ -37,11 +79,7 @@ struct FutureInterval: View {
     let format = getTimeFormat()
     HStack {
       if let s = start {
-        if let n = now, s < n {
-          Text("now")
-        } else {
-          Text("~\(dateToString(s, format: format))")
-        }
+        Text("~\(dateToString(s, format: format))")
       }
       if let e = end {
         Text("– \(dateToString(e, format: format))")

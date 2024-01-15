@@ -1,0 +1,4 @@
+
+- https://github.com/pawello2222/WidgetExamples/blob/eb3a5fae284dfe73833354a1572e196c42c561a2/App/Screens/SwiftData/SwiftDataWidgetView.swift
+- https://developer.apple.com/documentation/widgetkit/keeping-a-widget-up-to-date
+- https://alexanderlogan.co.uk/blog/wwdc23/08-cloudkit-swift-data

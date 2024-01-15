@@ -9,12 +9,12 @@ import Foundation
 
 
 func formatTime(_ date: Date) -> String {
-  let dateFormatter = DateFormatter()
-  return dateFormatter.string(from: date)
+  return dateToString(date, format: getTimeFormat())
 }
 
 func getTimeFormat() -> String {
-  return dateFormatIs24Hour() ? "HH:mm" : "H:mm a"
+  //return dateFormatIs24Hour() ? "HH:mm" : "H:mm a"
+  return dateFormatIs24Hour() ? "HH:mm" : "HH:mm"
 }
 
 func dateFormatIs24Hour() -> Bool {

@@ -98,8 +98,8 @@ struct HomeScreenWidgetView: View {
               .font(.system(size: family == .systemSmall ? 15 : 16, design: .monospaced))
             Spacer()
             HStack {
-              BoobButton(side: Side.left, activeSide: feeding.side, reverse: true, intent: StartLeftFeeding())
-              BoobButton(side: Side.right, activeSide: feeding.side, reverse: true, intent: StartRightFeeding())
+              BoobIntentButton(side: Side.left, activeSide: feeding.side, reverse: true, intent: StartLeftFeeding())
+              BoobIntentButton(side: Side.right, activeSide: feeding.side, reverse: true, intent: StartRightFeeding())
             }
             if let diff = differenceInMinutes(start: feeding.timestamp, end: now) {
               Spacer()

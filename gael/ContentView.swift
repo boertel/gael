@@ -57,6 +57,7 @@ struct ActionsBar: View {
   
   private func addFeeding(_ side: Side) {
     modelContext.insert(Feeding(side: side))
+    WidgetCenter.shared.reloadAllTimelines()
   }
   
   func addLeftFeeding() {
@@ -65,6 +66,14 @@ struct ActionsBar: View {
   
   func addRightFeeding() {
     addFeeding(Side.right)
+  }
+  
+  func clean() {
+    do {
+      try modelContext.delete(model: Feeding.self)
+      WidgetCenter.shared.reloadAllTimelines()
+    } catch {
+    }
   }
   
   var body: some View {
@@ -82,7 +91,12 @@ struct ActionsBar: View {
             reverse: true,
             size: 40,
             action: addLeftFeeding
+            //intent: StartLeftFeeding()
           )
+          /*
+          Spacer()
+          Button("delete", action: clean)
+          */
           Spacer()
           BoobButton(
             side: Side.right,
@@ -90,6 +104,7 @@ struct ActionsBar: View {
             reverse: true,
             size: 40,
             action: addRightFeeding
+            //intent: StartRightFeeding()
           )
         }
         Spacer()

@@ -11,7 +11,6 @@ import WidgetKit
 import SwiftData
 
 struct GaelShortcuts: AppShortcutsProvider {
-  @AppShortcutsBuilder
   static var appShortcuts: [AppShortcut] {
     AppShortcut(
       intent: StartFeedingIntent(),
@@ -19,36 +18,7 @@ struct GaelShortcuts: AppShortcutsProvider {
       shortTitle: "Start Feeding (shortcut)",
       systemImageName: "play.circle.fill"
     )
-    AppShortcut(
-      intent: StartRightFeeding(),
-      phrases: ["Tell \(.applicationName) to start the feeding on the right side"],
-      shortTitle: "Start feeding on the right side",
-      systemImageName: "r.circle.fill"
-    )
-    AppShortcut(
-      intent: StartLeftFeeding(),
-      phrases: ["Tell \(.applicationName) to start the feeding on the left side"],
-      shortTitle: "Start feeding on the left side",
-      systemImageName: "l.circle.fill"
-    )
   }
-}
-
-@MainActor
-func getLastFeeding(_ modelContainer: ModelContainer) -> Feeding? {
-  var descriptor = FetchDescriptor<Feeding>(sortBy: [SortDescriptor(\.timestamp, order: .reverse)])
-  descriptor.fetchLimit = 1
-  let feedings = try? modelContainer.mainContext.fetch(descriptor)
-  let lastFeeding = feedings?.first
-  return lastFeeding
-}
-
-@MainActor
-func insertFeeding(modelContainer: ModelContainer, side: Side) {
-  let previous = getLastFeeding(modelContainer)
-  let feeding = Feeding(side: side, previous: previous)
-  modelContainer.mainContext.insert(feeding)
-  WidgetCenter.shared.reloadAllTimelines()
 }
 
 struct StartFeedingIntent: AppIntent {
@@ -60,7 +30,10 @@ struct StartFeedingIntent: AppIntent {
       return .result()
     }
     
-    let lastFeeding = getLastFeeding(modelContainer)
+    var descriptor = FetchDescriptor<Feeding>(sortBy: [SortDescriptor(\.timestamp, order: .reverse)])
+    descriptor.fetchLimit = 1
+    let feedings = try? modelContainer.mainContext.fetch(descriptor)
+    let lastFeeding = feedings?.first
     
     if let f = lastFeeding {
       let nextSide = f.side == Side.left ? Side.right : Side.left
@@ -68,7 +41,6 @@ struct StartFeedingIntent: AppIntent {
       modelContainer.mainContext.insert(feeding)
       WidgetCenter.shared.reloadAllTimelines()
     }
-    
     return .result()
   }
 }
@@ -82,7 +54,9 @@ struct StartRightFeeding: AppIntent {
       return .result()
     }
     
-    insertFeeding(modelContainer: modelContainer, side: Side.right)
+    let feeding = Feeding(side: Side.right)
+    modelContainer.mainContext.insert(feeding)
+    WidgetCenter.shared.reloadAllTimelines()
     
     return .result()
   }
@@ -97,7 +71,9 @@ struct StartLeftFeeding: AppIntent {
       return .result()
     }
     
-    insertFeeding(modelContainer: modelContainer, side: Side.left)
+    let feeding = Feeding(side: Side.left)
+    modelContainer.mainContext.insert(feeding)
+    WidgetCenter.shared.reloadAllTimelines()
     
     return .result()
   }

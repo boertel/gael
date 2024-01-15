@@ -1,8 +1,0 @@
-app_identifier("com.comediadesign.gael") # The bundle identifier of your app
-apple_id("ben@comediadesign.com") # Your Apple Developer Portal username
-
-itc_team_id("118188359") # App Store Connect Team ID
-team_id("8W386G7SY7") # Developer Portal Team ID
-
-# For more information about the Appfile, see:
-#     https://docs.fastlane.tools/advanced/#appfile
